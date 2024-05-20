@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +23,7 @@
             <nav class="page-nav">
                 <a class="page-logo" href="./index.html">Web<span class="logo-change">Studio</span></a>
                 
-                <ul class="menu">
+                <ul class="menu menu-header">
                     <li class="menu-item studio-header">
                         <a class="menu-link active" href="./index.html" target="_blank">Studio</a>
                     </li>
@@ -35,6 +35,11 @@
                     </li>
                 </ul>
             </nav>
+            <button class="mobile-open-btn" type="button">
+              <svg class="mobile-open-btn-icon" width="24" height="24">
+                <use href="./images/icons.svg#icon-heroicons-solid_menu"></use>
+              </svg>
+            </button>
             <address class="page-address">
                 <ul class="page-address-link">
                     <li><a class="address-link" href="mailto:info@devstudio.com">info@devstudio.com</a></li>
@@ -56,7 +61,7 @@
         </section>
        <!--============SECTION1=======-->
         <section class="first-section section-paddings">
-            <div class="container">
+           <div class="container">
                 <h2 class="visually-hidden">Section first</h2>
                 <ul class="list-feature">
                     <li class="feature-item">
@@ -99,7 +104,6 @@
                 </ul>
             </div>
             
-            
         </section>
         <!--=============TEAM=================-->
         <section class="section-team section-paddings">
@@ -107,7 +111,9 @@
                 <h2 class="title-team section-title">Our Team</h2>
                 <ul class="list-team">
                   <li class="item-team">
-                    <img class="img-team" src="./images/team/mark-guerrero.jpg" 
+                    <img class="img-team" 
+                    srcset="./images/retina/mark-guerrero@2x.jpg 2x"
+                    src="./images/team/mark-guerrero.jpg" 
                     alt="Mark Guerrero avatar" 
                     width="264" 
                     height="260" 
@@ -145,7 +151,9 @@
                   </li>
                     
                   <li class="item-team">
-                   <img class="img-team" src="./images/team/tom-ford.jpg" 
+                   <img class="img-team" 
+                   srcset="./images/retina/tom-ford@2x.jpg 2x"
+                   src="./images/team/tom-ford.jpg" 
                    alt="Tom Ford avatar" 
                    width="264" 
                    height="260" 
@@ -183,7 +191,9 @@
                 </li>
     
                 <li class="item-team">
-                  <img class="img-team" src="./images/team/camila-garcia.jpg" 
+                  <img class="img-team" 
+                  srcset="./images/retina/camila-garcia@2x.jpg 2x"
+                  src="./images/team/camila-garcia.jpg" 
                   alt="Camila Garcia avatar" 
                   width="264" 
                   height="260" 
@@ -221,7 +231,9 @@
                 </li>
                   
                 <li class="item-team">
-                  <img class="img-team" src="./images/team/daniel-wilson.jpg" 
+                  <img class="img-team" 
+                  srcset="./images/retina/daniel-wilson@2x.jpg 2x"
+                  src="./images/team/daniel-wilson.jpg" 
                   alt="Daniel Wilson avatar" 
                   width="264" 
                   height="260" 
@@ -261,7 +273,7 @@
 
             </div>
             
-        </section>
+        </section> 
         <!--==============PORTFOLIO===============-->
         <section class="section-portfolio section-paddings">
             <div class="container">
@@ -270,7 +282,42 @@
                 
                  <li class="item-portfolio">
                     <div class="image-container">
-                     <img class="img-portfolio" src="./images/portfolio/banking.jpg" alt="Banking App" width="360" height="300">
+                      <picture>
+                        <source
+                          media="(min-width: 1158px)"
+                          srcset="
+                            ./images/retina/portfolio-desktop-1.jpg    1x,
+                            ./images/retina/portfolio-desktop-1@2x.jpg 2x
+                          "
+                          width="360"
+                          height="300"
+                        />
+                        <source
+                          media="(min-width: 768px)"
+                          srcset="
+                            ./images/retina/portfolio-tablet-1.jpg    1x,
+                            ./images/retina/portfolio-tablet-1@2x.jpg 2x
+                          "
+                          width="356"
+                          height="300"
+                        />
+                        <source
+                          media="(max-width: 767px)"
+                          srcset="
+                            ./images/retina/portfolio-mobile-1.jpg    1x,
+                            ./images/retina/portfolio-mobile-1@2x.jpg 2x
+                          "
+                          width="288"
+                          height="280"
+                        />
+                        <img
+                          class="our-portfolio-item-img"
+                          src="./images/retina/portfolio-desktop-1.jpg"
+                          alt="Banking App"
+                          width="360"
+                          height="300"
+                        />
+                      </picture>
 
                      <p class="overlay-text">14 Stylish and
                         User-Friendly App Design Concepts · Task
@@ -382,7 +429,7 @@
 
     </main>
     <!--===================FOOTER===================-->
-    <footer class="page-footer back-color">
+    <!-- <footer class="page-footer back-color">
      <div class="container footer-container">
         <div class="footer-margine">
           <a class="footer-logo" href="./index.html">Web<span class="change-second">Studio</span></a>
@@ -447,19 +494,19 @@
      </div>
     </footer>
 
-    
+     -->
 <!----------------MODAL-------------------------------->
-    <div class="backdrop is-open">
+    <!-- <div class="backdrop is-open">
       <div class="modal">
         <button class="modal-close-btn" type="button">
           <svg class="modal-close-btn-icon" width="8" height="8">
           <use href="./images/icons.svg#icon-close"></use>
           </svg>
         </button>
-        <p class="modal-title">Leave your contacts and we will call you back</p>
+        <p class="modal-title">Leave your contacts and we will call you back</p> -->
      
         <!--FORM------->
-        <form class="form">
+        <!-- <form class="form">
           <div class="modal-form-container">
             <label class="form-lable" for="user-name">Name</label>
             <div class="input-wrapper">
@@ -537,7 +584,64 @@
 
         </form>
       </div>
-  </div> 
+  </div>  -->
  <!--</div>-->
+
+ <!--========MOBILE MODAL============-->
+ <div class="mobile-menu is-open">
+  <div class="container mobile-menu-container">
+    <button class="mobile-close-btn">
+      <svg class="mob-close-btn-icon" width="8" height="8">
+        <use href="./images/icons.svg#icon-close"></use>
+      </svg>
+    </button>
+    <nav class="mobile-nav">
+      <ul class="mobile-nav-list">
+        <li class="mobile-nav-list-item">
+          <a href="./index.html" class="mobile-nav-link active">Studio</a>
+        </li>
+        <li class="mobile-nav-list-item">
+          <a href="#" class="mobile-nav-link">Portfolio</a>
+        </li>
+        <li class="mobile-nav-list-item">
+          <a href="#" class="mobile-nav-link">Contacts</a>
+        </li>
+      </ul>
+    </nav>
+    <address class="mobile-address">
+      <ul class="mobile-address-list">
+          <li><a class="mobile-address-link color" href="tel:+110001111111">+11 (000) 111-11-11</a></li>
+          <li><a class="mobile-address-link" href="mailto:info@devstudio.com">info@devstudio.com</a></li>
+      </ul>
+  </address>
+
+  <ul class="social-link-modal">
+    <li class="social-list-mobile">
+        <a class="social-link-mobile" href="https://www.instagram.com/">
+         <svg class="social-list-icon-mobile" width="24" height="24">
+           <use href="./images/icons.svg#icon-instagram"></use>
+    </svg></a>
+   </li>
+    <li class="social-list-mobile">
+        <a class="social-link-mobile" href="https://twitter.com/">
+         <svg class="social-list-icon-mobile" width="24" height="24">
+           <use href="./images/icons.svg#icon-twitter"></use>
+        </svg></a>
+  </li>
+  <li class="social-list-mobile">
+    <a class="social-link-mobile" href="https://www.facebook.com/">
+     <svg class="social-list-icon-mobile" width="24" height="24">
+       <use href="./images/icons.svg#icon-facebook"></use>
+    </svg></a>
+  </li>
+  <li class="social-list-mobile">
+    <a class="social-link-mobile" href="https://www.linkedin.com/home">
+     <svg class="social-list-icon-mobile" width="24" height="24">
+      <use href="./images/icons.svg#icon-linkedin"></use>
+    </svg></a>
+  </li>
+</ul>
+  </div>
+ </div>
 </body>
 </html>
